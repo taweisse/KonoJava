@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Kono Java</string>
+    <string name="konoLogo">Kono Logo</string>
+    <string name="p1Score">Player 1 Score:</string>
+    <string name="p2Score">Player 2 Score:</string>
+    <string name="nextUp">Next Move:</string>
+</resources>

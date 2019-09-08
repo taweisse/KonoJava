@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewTournamentActivity">
+
+    <!-- Select board size. -->
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="375dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="166dp"
+            android:layout_height="match_parent"
+            android:text="Select a board size:"
+            android:textSize="18dp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Spinner
+            android:id="@+id/boardSizeSpinner"
+            android:layout_width="109dp"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="258dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </LinearLayout>
+
+    <!-- Select opponent. -->
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="375dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TextView
+            android:layout_width="149dp"
+            android:layout_height="match_parent"
+            android:text="Select opponent:"
+            android:textSize="18dp"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Spinner
+            android:id="@+id/opponentTypeSpinner"
+            android:layout_width="158dp"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="258dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="395dp"
+        android:layout_height="2dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    <!-- Roll dice button. -->
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="366dp"
+        android:layout_height="92dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Roll dice to see which player moves first!"
+            android:textSize="18dp"
+            tools:layout_editor_absoluteX="176dp"
+            tools:layout_editor_absoluteY="189dp" />
+
+        <Button
+            android:id="@+id/rollDiceBtn"
+            android:layout_width="261dp"
+            android:layout_height="50dp"
+            android:onClick="RollDice"
+            android:text="Roll"
+            tools:layout_editor_absoluteX="121dp"
+            tools:layout_editor_absoluteY="221dp" />
+
+    </LinearLayout>
+
+    <!-- Dice roll results display. -->
+    <LinearLayout
+        android:id="@+id/diceResults"
+        android:layout_width="402dp"
+        android:layout_height="293dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player 1 Rolls "
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <TextView
+                android:id="@+id/p1r1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" and "
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <TextView
+                android:id="@+id/p1r2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player 2 Rolls "
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <TextView
+                android:id="@+id/p2r1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" and "
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <TextView
+                android:id="@+id/p2r2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player "
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <TextView
+                android:id="@+id/rollWinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" wins!"
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="395dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Pick a color, Player  "
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <TextView
+                android:id="@+id/pickColorPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textSize="18dp"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="439dp" />
+
+            <Spinner
+                android:id="@+id/playerColorSpinner"
+                android:layout_width="150dp"
+                android:layout_height="34dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="Start Tournament"
+            android:onClick="CreateTournament" />
+
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
